@@ -1,0 +1,15 @@
+.btnWitdh {
+    width: 100%;
+}
+p{
+    color: #0fb6a8;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.card-title{
+    color: black;
+}
