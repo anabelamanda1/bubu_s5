@@ -1,15 +1,29 @@
 .btnWitdh {
     width: 100%;
 }
-p{
-    color: #0fb6a8;
+
+
+.btnIcon i {
+    margin-right: 10px;
+}
+.btnIcon {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.collection .collection-item.avatar .title {
+    font-weight: 700;
     font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-    font-weight: bold;
-    font-style: italic;
+    display: block;
+}
+.collection .collection-item.avatar p.precio {
+    color: #2bbbad;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 10px;
 }
 
-.card-title{
-    color: black;
+.producto-imagen {
+    width: 40px; 
+    height: auto; /
 }
