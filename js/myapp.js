@@ -1,7 +1,6 @@
 const $usuario = $("#usuario");
 const $password = $("#password");
 
-/* CREDENCIALES VERDADERAS */
 const credenciales = {
     usuario: "BUBU2024",
     pass: "bubu2024"
@@ -12,6 +11,7 @@ $("#login").on("click", function(){
     const valuePassword = $password.val();
     if (valueUsuario == credenciales.usuario) {
         if (valuePassword == credenciales.pass) {
+            localStorage.setItem("isLoggedIn", true); // Almacena que el usuario ha iniciado sesión
             location.href = "dashboard.html";
         } else {
             Swal.fire({
@@ -28,4 +28,3 @@ $("#login").on("click", function(){
         });
     }
 });
-

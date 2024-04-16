@@ -1,5 +1,5 @@
 const compras = [
-    {   
+    {
         "id": "001",
         "uuid": "15414581asda1a1x",
         "nombre": "Compra en tienda",
@@ -10,19 +10,19 @@ const compras = [
                 "SKU": "14815",
                 "nombre": "Gaseosa Coreana",
                 "monto": "S/ 25",
-                "imagen":"images/imagen.jpg"
+                "imagen":"images/imagen1.jpg"
             },
             {
                 "SKU": "145811",
                 "nombre": "Ramen Picante",
                 "monto": "S/ 20",
-                "imagen":"images/imagen.jpg"
+                "imagen":"images/imagen2.jpg"
             },
             {
                 "SKU": "148112",
-                "nombre": "Palillos",
+                "nombre": "Snacks",
                 "monto": "S/ 5",
-                "imagen":"images/imagen.jpg"
+                "imagen":"images/imagen3.jpg"
             }
         ]
     },
@@ -37,19 +37,19 @@ const compras = [
                 "SKU": "177774",
                 "nombre": "Ramen con picante medio",
                 "monto": "S/ 30",
-                "imagen":"images/imagen.jpg"
+                "imagen":"images/imagen4.jpg"
             },
             {
                 "SKU": "177771",
                 "nombre": "Helado coreano",
                 "monto": "S/ 9.00",
-                "imagen":"images/imagen.jpg"
+                "imagen":"images/imagen5.jpg"
             },
             {
                 "SKU": "177779",
                 "nombre": "Peperos",
                 "monto": "S/ 11.00",
-                "imagen":"images/imagen.jpg"
+                "imagen":"images/imagen6.jpg"
             }
         ]
     },
@@ -64,15 +64,14 @@ const compras = [
                 "SKU": "666",
                 "nombre": "Galleta coreana",
                 "monto": "S/ 8",
-                "imagen":"images/imagen.jpg"
+                "imagen":"images/imagen7.jpg"
             }
         ]
     }
 ];
-//Imprimir esa lista de compras
+
 const $misProductos = $("#misProductos");
 compras.forEach((compra) => {
-    //2. Crear una NUEVA URL donde usemos de parametro el ID
     const link = "producto.html?idcompra="+compra.id;
     const template = `
         <li class="collection-item avatar" data-id="${compra.id}" data-uuid="${compra.uuid}">
@@ -92,11 +91,6 @@ compras.forEach((compra) => {
     `;
     $misProductos.append(template);
 });
-
-/*
-    3. En esa URL vamos a leer el parametro 
-    e imprimir los datos de los productos
-*/
 
 const queryString = window.location.search;
 const params = new URLSearchParams(queryString);
@@ -124,3 +118,17 @@ if (idcompra) {
         });
     }
 }
+
+// Redirigir a index.html si el usuario no ha iniciado sesión
+document.addEventListener("DOMContentLoaded", function() {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (!isLoggedIn) {
+        alert("Por favor, inicia sesión para acceder a esta página.");
+        location.href = "index.html";
+    }
+
+    document.getElementById('logout').addEventListener('click', function() {
+        localStorage.removeItem('isLoggedIn');
+        window.close();
+    });
+});
